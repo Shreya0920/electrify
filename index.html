@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>
+        E ELECTRIFY
+    </title>
+    <script type="text/javascript">
+        function calc() {
+            var E = parseFloat(document.getElementById("E").value)
+            var T = parseFloat(document.getElementById("T").value)
+            var U = parseFloat(document.getElementById("U").value)
+
+
+            var op = document.getElementById("opr").value
+
+            document.getElementById('result').value = ((E * T) / 1000) * U;
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="calculator.css">
+
+<body>
+
+
+
+
+
+    <div class="navbar">
+        <img src="E-logo.PNG" id="logo" alt="" width="150" height="54" />
+        <div class="links-container" style="float: right">Devloper | Shreya</div>
+
+
+
+
+    </div>
+
+
+
+
+    <form name="calculator" class="calc">
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text" name="display" id="display" disabled>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="button" name="one" value="1" onclick="calculator.display.value += '1'">
+                </td>
+                <td>
+                    <input type="button" name="two" value="2" onclick="calculator.display.value += '2'">
+                </td>
+                <td>
+                    <input type="button" name="three" value="3" onclick="calculator.display.value += '3'">
+                </td>
+                <td>
+
+                    <input type="button" class="operator" name="plus" value="+" onclick="calculator.display.value += '+'">
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="button" name="four" value="4" onclick="calculator.display.value += '4'">
+                </td>
+                <td>
+                    <input type="button" name="five" value="5" onclick="calculator.display.value += '5'">
+                </td>
+                <td>
+                    <input type="button" name="six" value="6" onclick="calculator.display.value += '6'">
+                </td>
+                <td>
+                    <input type="button" class="operator" name="minus" value="-" onclick="calculator.display.value += '-'">
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="button" name="seven" value="7" onclick="calculator.display.value += '7'">
+                </td>
+                <td>
+                    <input type="button" name="eight" value="8" onclick="calculator.display.value += '8'">
+                </td>
+                <td>
+                    <input type="button" name="nine" value="9" onclick="calculator.display.value += '9'">
+                </td>
+                <td>
+                    <input type="button" class="operator" name="times" value="x" onclick="calculator.display.value += '*'">
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="button" id="clear" name="clear" value="c" onclick="calculator.display.value = ''">
+                </td>
+                <td>
+                    <input type="button" name="zero" value="0" onclick="calculator.display.value += '0'">
+                </td>
+                <td>
+                    <input type="button" name="doit" value="=" onclick="calculator.display.value = eval(calculator.display.value)">
+                </td>
+                <td>
+                    <input type="button" class="operator" name="div" value="/" onclick="calculator.display.value += '/'">
+                </td>
+            </tr>
+
+
+        </table>
+    </form>
+
+    <div class="box">
+        <h1>
+            Now you can calculate the amount of electric money consume by your Electronic Device
+        </h1>
+
+        <div class="text">
+            Power Consumption of Your Electronic Device(Watt):<br><input type="text" id="E" maxlength="7" value="0.0">
+            <br><br> Usable Time Of Your Electronic Device(Hrs):<br> <input type="text" id="T" maxlength="7" value="00">
+            <br><br> Price of Electricity Per Unit In Your Area:<br> <input type="text" id="U" maxlength="7" value="0.0">
+        </div>
+        <br><br>
+        <div id="opr"></div>
+        <div class="btn"><input type="Button" value="Calculate" onclick="calc();"></div>
+        <br><br>
+        <div class="answer"> Your Electronic device consumed this amount of money in your given time:<br><input type="text" id="result"><br><br></div>
+
+    </div>
+
+</body>
+
+</html>
